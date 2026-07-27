@@ -38,6 +38,10 @@ This project follows industry best practices and is designed to showcase practic
 # Architecture Diagram
 
 ![](architecture/aws-architecture.png)
+
+
+# Architecture Diagram
+
 ![](architecture/network-architecture.png)
 
 ---
@@ -159,6 +163,9 @@ Create a secure network infrastructure for the application.
 
 ![](screenshots/01-vpc.png)
 
+
+![](screenshots/02-subnet.png)
+
 **Outcome**
 
 ✔ Secure AWS networking environment created.
@@ -184,7 +191,7 @@ Launch an EC2 instance and configure secure access.
 ### Screenshot
 
 ![](screenshots/03-ec2-instance.png)
-![](screenshots/02-subnet.png)
+
 
 **Outcome**
 
@@ -449,6 +456,8 @@ stress --vm 1 --vm-bytes 300M --timeout 300
 ### Screenshot
 
 ![](screenshots/11-project-testing.png)
+
+
 ![](screenshots/11.1-project-testing.png)
 
 **Outcome**
