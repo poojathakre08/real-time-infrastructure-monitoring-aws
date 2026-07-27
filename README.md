@@ -37,45 +37,46 @@ This project follows industry best practices and is designed to showcase practic
 
 # Architecture Diagram
 
-
+![](architecture/aws-architecture.png)
+![](architecture/network-architecture.png)
 
 ---
 
 # AWS Services Used
 
-| Service | Purpose |
-|----------|----------|
-| Amazon VPC | Network Isolation |
-| EC2 | Web Server |
-| IAM | Secure Access |
-| Security Groups | Firewall |
-| NGINX | Web Server |
-| PHP | Application |
-| MariaDB | Database |
-| CloudWatch | Monitoring |
-| CloudWatch Agent | Custom Metrics |
-| SNS | Email Alerts |
-| CloudTrail | Auditing |
-| S3 | CloudTrail Logs |
-| GitHub | Source Code Repository |
+| Service          | Purpose                |
+| ---------------- | ---------------------- |
+| Amazon VPC       | Network Isolation      |
+| EC2              | Web Server             |
+| IAM              | Secure Access          |
+| Security Groups  | Firewall               |
+| NGINX            | Web Server             |
+| PHP              | Application            |
+| MariaDB          | Database               |
+| CloudWatch       | Monitoring             |
+| CloudWatch Agent | Custom Metrics         |
+| SNS              | Email Alerts           |
+| CloudTrail       | Auditing               |
+| S3               | CloudTrail Logs        |
+| GitHub           | Source Code Repository |
 
 ---
 
 # Technology Stack
 
-| Category | Technology |
-|-----------|------------|
-| Cloud | AWS |
-| Compute | EC2 |
-| Monitoring | CloudWatch |
-| Notification | SNS |
-| Logging | CloudWatch Logs |
-| Audit | CloudTrail |
-| Web Server | NGINX |
-| Database | MariaDB |
-| Language | PHP |
-| Version Control | Git |
-| Repository | GitHub |
+| Category        | Technology      |
+| --------------- | --------------- |
+| Cloud           | AWS             |
+| Compute         | EC2             |
+| Monitoring      | CloudWatch      |
+| Notification    | SNS             |
+| Logging         | CloudWatch Logs |
+| Audit           | CloudTrail      |
+| Web Server      | NGINX           |
+| Database        | MariaDB         |
+| Language        | PHP             |
+| Version Control | Git             |
+| Repository      | GitHub          |
 
 ---
 
@@ -110,6 +111,7 @@ real-time-infrastructure-monitoring-aws/
 ```
 
 ---
+
 ## Prerequisites
 
 Before setting up this project, ensure the following are available:
@@ -117,11 +119,11 @@ Before setting up this project, ensure the following are available:
 An active Amazon Web Services account  
 Basic knowledge of EC2 instance management  
 Amazon EC2 instance (Amazon Linux / Ubuntu)  
-IAM role with permissions for CloudWatch, cloudtrail, 
+IAM role with permissions for CloudWatch, cloudtrail,
 Amazon CloudWatch configured for metrics and logs  
-Amazon Simple Notification Service topic created for alerts    
+Amazon Simple Notification Service topic created for alerts  
 NGINX, PHP, and MariaDB installed on EC2 instances  
-Basic Linux command-line knowledge  
+Basic Linux command-line knowledge
 
 ---
 
@@ -147,11 +149,11 @@ Create a secure network infrastructure for the application.
 
 ### Security Group Rules
 
-| Type | Port | Source |
-|------|------|---------|
-| SSH | 22 | My IP |
-| HTTP | 80 | 0.0.0.0/0 |
-| HTTPS | 443 | 0.0.0.0/0 |
+| Type  | Port | Source    |
+| ----- | ---- | --------- |
+| SSH   | 22   | My IP     |
+| HTTP  | 80   | 0.0.0.0/0 |
+| HTTPS | 443  | 0.0.0.0/0 |
 
 ### Screenshot
 
@@ -171,13 +173,13 @@ Launch an EC2 instance and configure secure access.
 
 ### EC2 Configuration
 
-| Setting | Value |
-|---------|-------|
-| AMI | Amazon Linux 2023 |
-| VPC | Custom VPC |
-| Subnet | Public Subnet |
-| Security Group | monitoring-sg |
-| IAM Role | CloudWatchAgentServerPolicy |
+| Setting        | Value                       |
+| -------------- | --------------------------- |
+| AMI            | Amazon Linux 2023           |
+| VPC            | Custom VPC                  |
+| Subnet         | Public Subnet               |
+| Security Group | monitoring-sg               |
+| IAM Role       | CloudWatchAgentServerPolicy |
 
 ### Screenshot
 
@@ -221,7 +223,7 @@ sudo systemctl start mariadb
 
 Deploy the PHP CRUD application and configure the database.
 
-```bash
+````bash
 
 cd /usr/share/nginx/html
 
@@ -235,7 +237,7 @@ CREATE USER employeeuser@localhost IDENTIFIED BY 'StrongPassword@123';
 GRANT ALL PRIVILEGES ON employee_db.* TO employeeuser@localhost;
 
 FLUSH PRIVILEGES;
-```
+````
 
 ### Import Database
 
@@ -455,7 +457,6 @@ stress --vm 1 --vm-bytes 300M --timeout 300
 
 ---
 
-
 # Future Improvements
 
 - Application Load Balancer
@@ -479,7 +480,8 @@ stress --vm 1 --vm-bytes 300M --timeout 300
 - CI/CD Pipeline using GitHub Actions
 
 ---
-#  Features
+
+# Features
 
 - Real-time monitoring
 - Infrastructure observability
@@ -487,7 +489,6 @@ stress --vm 1 --vm-bytes 300M --timeout 300
 - Centralized logging
 - Automated alert notifications
 - Application health tracking
-
 
 ---
 
@@ -499,17 +500,17 @@ I understood that a better production approach would be to redesign the monitori
 
 This would provide advantages such as:
 
-- Automatic monitoring for newly launched instances  
-- Better scalability and high availability  
-- Centralized monitoring architecture  
-- More production-ready cloud design  
+- Automatic monitoring for newly launched instances
+- Better scalability and high availability
+- Centralized monitoring architecture
+- More production-ready cloud design
 
 If I continue this project in the next version, I would implement:
 
-- CloudWatch Agent integration with Auto Scaling  
-- Shared CloudWatch alarms and metrics  
-- Centralized log collection  
-- Event-driven alerting using Lambda and SNS  
+- CloudWatch Agent integration with Auto Scaling
+- Shared CloudWatch alarms and metrics
+- Centralized log collection
+- Event-driven alerting using Lambda and SNS
 
 This realization helped me better understand real-world cloud monitoring architecture and production-oriented DevOps practices.
 
