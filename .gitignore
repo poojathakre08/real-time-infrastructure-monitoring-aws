@@ -1,0 +1,9 @@
+config.php
+*.pem
+*.key
+*.log
+.env
+vendor/
+node_modules/
+.vscode/
+.idea/
