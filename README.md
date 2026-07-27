@@ -40,7 +40,7 @@ This project follows industry best practices and is designed to showcase practic
 ![](architecture/aws-architecture.png)
 
 
-# Architecture Diagram
+# Network Diagram
 
 ![](architecture/network-architecture.png)
 
